@@ -7,7 +7,6 @@
   <a href="#output-format">Output Format</a>
 </p>
 
-
 ## Description  
 This code find the biggest clique in a graph.  
 This code done in course "Computer Structure" in Bar Ilan University. We received code and had to optimize it.
