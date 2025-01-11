@@ -50,13 +50,11 @@ The following images show the program's output before and after optimization:
 
 4. **To compile:**
 ```bash
-# compile the code
 gcc -O0 main.c max-clique.c -o main
 ```  
 
 5. **To run:**
 ```bash
-# run the code
 ./main < graph.txt
 ```
 
