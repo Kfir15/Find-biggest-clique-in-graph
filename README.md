@@ -16,8 +16,26 @@ In this task, we are given graph G = (V,E), represented by an adjacency matrix A
 * A[i,j] = 1 if there is an edge between vertices 𝑖  and 𝑗 
 * A[i,j] = 0 if there is no edge between these vertices  
   
+The goal is to find the biggest subset such that for all vertices in the subset there is an edge between them.  
 
-The goal is to find the biggest subset such that for all vertices in the subset there is an edge between them.
+This is a well-known problem in computer science called the Maximum Clique Problem. It is classified as NP-Hard, meaning we currently do not have an algorithm to solve it in polynomial time.  
+
+For this task, we were provided with an existing implementation that solves the problem. Our assignment was to optimize the code and make changes to improve its performance, ensuring it runs faster while maintaining correctness.
+
+## Performance Comparison  
+
+The following images show the program's output before and after optimization:  
+
+### Before Optimization  
+<p align="center">
+  <img src="pictures/before.png" alt="Before Optimization" width="300">
+</p>  
+
+### After Optimization  
+<p align="center">
+  <img src="pictures/after.png" alt="After Optimization" width="300">
+</p>
+
 
 ## To Run  
 1. Clone this repository.  
