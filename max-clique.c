@@ -115,20 +115,30 @@ void findMaxClique(int graph[MAX_VERTICES][MAX_VERTICES], int n) {
     int *maxClique = (int *)malloc(n * sizeof(int));
     int maxSize = 0;
 
-    // loop unrolling to generate combination of the graph
-    int k = 1;
-    for (; k < n - 1; k += 2) {
+    /**
+     * loop unrolling to generate combination of the graph
+     * start from the largest possible clique size (n) and go downwards
+     */
+    int k = n;
+    for (; k > 1; k -= 2) {
         generateCombinations(graph, n, clique, k, 0, 0, &maxSize, maxClique);
-        generateCombinations(graph, n, clique, k + 1, 0, 0, &maxSize, maxClique);
 
-        // if the maxSize of the clique is all the vertex exit
-        if (maxSize == n) {
+        // if a clique of size k is found, it is the largest
+        if (maxSize == k) {
             break;
-        }        
+        }
+
+        generateCombinations(graph, n, clique, k - 1, 0, 0, &maxSize, maxClique);
+
+        // if a clique of size k - 1 is found, it is the largest
+        if (maxSize == k - 1) {
+            break;
+        }
     }
-    for (; k <= n; k++) {
+    for (; k >= 1; --k) {
         generateCombinations(graph, n, clique, k, 0, 0, &maxSize, maxClique);
     }
+
 
     // print the max clique
     printf("Clique Members: ");
